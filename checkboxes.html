@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+    <title>CheckBoxes</title>
+</head>
+<body>
+    <div id="checkboxlist">
+        <input type="checkbox" name="checkall" class="checkall" value="checkall">
+        <label for="checkall"> Check All</label><br>
+        <input type="checkbox" name="first" value="first">
+        <label for="first"> First</label><br>
+        <input type="checkbox" name="second" value="second">
+        <label for="second"> Second</label><br>
+        <input type="checkbox" name="third" value="third">
+        <label for="third"> Third</label><br>
+        <input type="checkbox" name="fourth" value="fourth">
+        <label for="fourth"> Fourth</label><br><br>
+    </div>
+
+    <script language='javascript'>
+        $(document).ready(function(){
+            $('.check:button').toggle(function(){
+                $('input:checkbox').attr('checked','checked');
+                $(this).val('uncheck all');
+            },function(){
+                $('input:checkbox').removeAttr('checked');
+                $(this).val('check all');        
+            })
+        });
+        /*$('.checkall').click(function() {
+            if ($(this).is(':checked')) {
+                $('div input').attr('checked', true);
+            } else {
+                $('div input').attr('checked', false);
+            }
+        });*/
+    </script>
+</body>
+</html>
